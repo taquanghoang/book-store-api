@@ -39,8 +39,6 @@ public class BookController {
 
     @PutMapping
     public ResponseEntity updateBook(@RequestBody Book book) {
-        System.out.println("Chao Tao");
-        System.out.println("ABC");
         return new ResponseEntity<>(bookService.updateBook(book), HttpStatus.OK);
     }
 
