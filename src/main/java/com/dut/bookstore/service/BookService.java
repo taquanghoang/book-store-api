@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface BookService {
     Book addBook(Book book);
-    Book getBookById(long id);
+    Book getBookById(int id);
     List<Book> getBooks();
-    void deleteBookById(long id);
+    void deleteBookById(int id);
     Book updateBook(Book book);
     List<Book> getBooksByName(String name);
 }
