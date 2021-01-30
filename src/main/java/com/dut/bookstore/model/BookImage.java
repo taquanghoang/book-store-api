@@ -7,25 +7,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
-@JsonFilter("filter.Book")
-public class Book {
+@JsonFilter("filter.BookImage")
+public class BookImage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
+    private String url;
 
-    @OneToMany(mappedBy = "book")
-    private List<Author> author;
-
-    @OneToMany(mappedBy = "book")
-    private List<BookImage> bookImages;
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    private Book book;
 }
